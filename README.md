@@ -4,6 +4,9 @@
 
 Pitchfork demonstrates how projects should be layed out and structured. This set of conventions is shamelessly copied from the [The Pitchfork Layout](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs). The following folders and files should be present in the root of a project:
 
+- `/.github`  
+  A special directory for GitHub related stuff, e.g. for running [actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+
 - `/build`  
   A special directory that should not be considered part of the source of the project. Used for storing ephemeral build results. Must not be checked into source control. If using source control must be ignored using source control ignore-lists.
 
