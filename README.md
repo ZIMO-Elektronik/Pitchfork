@@ -1,5 +1,7 @@
 # Pitchfork
 
+[![build](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml) [![tests](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml)
+
 <img src="data/images/pitchfork.png" width="25%" align="right"/>
 
 Pitchfork demonstrates how projects should be layed out and structured. This set of conventions is shamelessly copied from the [The Pitchfork Layout](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs). The following folders and files should be present in the root of a project:
@@ -45,6 +47,9 @@ Pitchfork demonstrates how projects should be layed out and structured. This set
 
 - `.gitignore`  
   Specifies intentionally untracked files that Git should ignore
+
+- `.licenserc.json`  
+  A special .json file used by the [kt3k/license_checker](https://github.com/kt3k/license_checker_github_action).
 
 - `CHANGELOG.md`  
   Log or record of all notable changes made to the project
