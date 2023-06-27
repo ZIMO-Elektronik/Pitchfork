@@ -1,0 +1,1 @@
+bool deep_thought_available() { return true; }

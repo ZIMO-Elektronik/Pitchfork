@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Doxygen",
+      "type": "shell",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}/docs"
+      },
+      "command": "doxygen Doxyfile"
+    },
+    {
+      "label": "CMake PitchforkTests Clang",
+      "type": "shell",
+      "isBackground": true,
+      "command": "cmake -Bbuild -GNinja -DCMAKE_TOOLCHAIN_FILE=CMakeModules/toolchains/clang.cmake -DCMAKE_BUILD_TYPE=Debug"
+    },
+    {
+      "label": "CMake PitchforkTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug"
+    },
+    {
+      "label": "Ninja PitchforkTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "ninja -C build PitchforkTests"
+    },
+    {
+      "label": "Run PitchforkTests",
+      "type": "shell",
+      "isBackground": true,
+      "command": "./build/tests/PitchforkTests"
+    }
+  ]
+}
