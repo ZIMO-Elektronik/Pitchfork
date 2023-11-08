@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.3
+- Add [Doxygen](https://www.doxygen.nl/) example
+
 ## 0.6.2
 - Add GitHub actions
 

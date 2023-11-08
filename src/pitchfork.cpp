@@ -24,9 +24,6 @@ static_assert(false);
 // Create an object from the C library
 ECRYPT_ctx ctx;
 
-/// Number 42
-///
-/// \return Answer to the ultimate question of life
 int answer_to_the_ultimate_question_of_life_the_universe_and_everything() {
   return deep_thought_available() ? 42 : 43;
 }
