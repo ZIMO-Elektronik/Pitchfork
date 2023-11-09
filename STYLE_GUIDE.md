@@ -54,6 +54,14 @@
 - Do not prefix getters and setters for no compelling reason. Rather use an overload which differs by arguments.
 
 - Use a leading underscore for member variables for non-[PODs](https://en.cppreference.com/w/cpp/named_req/PODType).
+  ```cpp
+  struct NonPod {
+      void foo();
+
+    private:
+      int _member{};
+  };
+  ```
 
 - Do not use the assignment operator for initialization, use braced initialization instead.
 
