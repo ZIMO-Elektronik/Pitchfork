@@ -1,9 +1,11 @@
 include(GoogleTest)
 
+include(${CMAKE_CURRENT_LIST_DIR}/../cmake/pitch_sanitize.cmake)
+
 file(GLOB_RECURSE SRC *.cpp)
 add_executable(PitchforkTests ${SRC})
 
-sanitize(address,undefined)
+pitch_sanitize("address,undefined")
 
 cpmaddpackage("gh:google/googletest#main")
 
