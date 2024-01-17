@@ -3,7 +3,7 @@ include(GoogleTest)
 file(GLOB_RECURSE SRC *.cpp)
 add_executable(PitchforkTests ${SRC})
 
-sanitize("address,undefined")
+sanitize(address,undefined)
 
 cpmaddpackage("gh:google/googletest#main")
 
