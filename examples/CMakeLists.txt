@@ -1,7 +1,7 @@
 file(GLOB_RECURSE SRC *.cpp)
 add_executable(PitchforkExamples ${SRC})
 
-sanitize("address,undefined")
+sanitize(address,undefined)
 
 target_common_warnings(PitchforkExamples PRIVATE)
 

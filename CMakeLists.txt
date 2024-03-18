@@ -4,7 +4,7 @@ include(FetchContent)
 FetchContent_Declare(
   CMakeModules
   GIT_REPOSITORY https://github.com/ZIMO-Elektronik/CMakeModules
-  GIT_TAG v0.7.0
+  GIT_TAG v0.8.0
   SOURCE_DIR ${CMAKE_BINARY_DIR}/CMakeModules)
 FetchContent_MakeAvailable(CMakeModules)
 
@@ -23,7 +23,7 @@ target_compile_features(Pitchfork PUBLIC cxx_std_23)
 
 target_compile_definitions(Pitchfork PRIVATE Pitchfork_ASSERT)
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+if(PROJECT_IS_TOP_LEVEL)
   target_include_directories(
     Pitchfork
     INTERFACE include
@@ -43,12 +43,18 @@ endif()
 
 target_link_libraries(Pitchfork PRIVATE Salsa20::Salsa20)
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-  add_subdirectory(docs)
+if(PROJECT_IS_TOP_LEVEL)
   include(CTest)
+  add_subdirectory(docs)
+  add_subdirectory(examples)
+  file(
+    DOWNLOAD
+    https://raw.githubusercontent.com/ZIMO-Elektronik/.clang-format/master/.clang-format
+    ${CMAKE_CURRENT_LIST_DIR}/.clang-format)
+  file(GLOB_RECURSE SRC include/*.[ch]pp src/*.[ch]pp tests/*.[ch]pp)
+  add_clang_format_target(PitchforkFormat OPTIONS -i FILES ${SRC})
 endif()
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
-  add_subdirectory(examples)
+if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
