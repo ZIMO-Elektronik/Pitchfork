@@ -63,5 +63,5 @@ Pitchfork demonstrates how projects should be layed out and structured. This set
 - `TODO.md`  
   Can contain a friendly reminder of things to do...
 
-## Style guide
+## Style Guide
 Furthermore there is a [style guide](STYLE_GUIDE.md) based on best practices and performance considerations.
