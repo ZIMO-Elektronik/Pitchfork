@@ -4,7 +4,7 @@ include(FetchContent)
 FetchContent_Declare(
   CMakeModules
   GIT_REPOSITORY "https://github.com/ZIMO-Elektronik/CMakeModules"
-  GIT_TAG v0.9.2
+  GIT_TAG v0.9.3
   SOURCE_DIR ${CMAKE_BINARY_DIR}/CMakeModules)
 FetchContent_MakeAvailable(CMakeModules)
 
@@ -38,7 +38,7 @@ endif()
 target_common_warnings(Pitchfork PRIVATE)
 
 if(NOT TARGET Salsa20::Salsa20)
-  cpmaddpackage("gh:ZIMO-Elektronik/Salsa20@0.3.0")
+  cpmaddpackage("gh:ZIMO-Elektronik/Salsa20@0.3.1")
 endif()
 
 target_link_libraries(Pitchfork PRIVATE Salsa20::Salsa20)
@@ -55,6 +55,8 @@ if(PROJECT_IS_TOP_LEVEL)
   add_clang_format_target(PitchforkFormat OPTIONS -i FILES ${SRC})
 endif()
 
-if(BUILD_TESTING AND CMAKE_SYSTEM_NAME STREQUAL CMAKE_HOST_SYSTEM_NAME)
+if(BUILD_TESTING
+   AND PROJECT_IS_TOP_LEVEL
+   AND CMAKE_SYSTEM_NAME STREQUAL CMAKE_HOST_SYSTEM_NAME)
   add_subdirectory(tests)
 endif()

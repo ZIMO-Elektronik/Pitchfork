@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.4
+- Bugfix CMake always includes tests
+
 ## 0.6.3
 - Add [Doxygen](https://www.doxygen.nl/) example
 

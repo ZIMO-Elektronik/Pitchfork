@@ -1,6 +1,6 @@
 # Pitchfork
 
-[![build](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml) [![tests](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml)
+[![build](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/build.yml) [![tests](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml/badge.svg)](https://github.com/ZIMO-Elektronik/Pitchfork/actions/workflows/tests.yml) [![license](https://img.shields.io/github/license/ZIMO-Elektronik/Pitchfork)](https://github.com/ZIMO-Elektronik/Pitchfork/raw/master/LICENSE)
 
 <img src="data/images/logo.png" width="25%" align="right"/>
 

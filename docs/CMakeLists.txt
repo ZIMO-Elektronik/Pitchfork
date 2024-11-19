@@ -6,7 +6,7 @@ option(
   ON)
 
 if(Doxygen_FOUND)
-  cpmaddpackage("gh:jothepro/doxygen-awesome-css@2.3.3")
+  cpmaddpackage("gh:jothepro/doxygen-awesome-css@2.3.4")
 
   set(DOXYGEN_PROJECT_LOGO ${CMAKE_SOURCE_DIR}/data/images/logo.png)
   set(DOXYGEN_REPEAT_BRIEF NO)
