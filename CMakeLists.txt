@@ -14,6 +14,10 @@ project(
   VERSION ${VERSION_FROM_GIT}
   LANGUAGES C CXX)
 
+set(PITCHFORK_ANSWER_TO_THE_ULTIMATE_QUESTION
+    42
+    CACHE STRING "The answer to life, the universe, and everything")
+
 add_compile_options(-Wfatal-errors)
 
 add_library(Pitchfork STATIC src/pitchfork.cpp external/deep_thought.cpp)
@@ -21,7 +25,12 @@ add_library(Pitchfork::Pitchfork ALIAS Pitchfork)
 
 target_compile_features(Pitchfork PUBLIC cxx_std_23)
 
-target_compile_definitions(Pitchfork PRIVATE Pitchfork_ASSERT)
+target_compile_definitions(
+  Pitchfork
+  PRIVATE
+    Pitchfork_ASSERT
+    PITCHFORK_ANSWER_TO_THE_ULTIMATE_QUESTION=${PITCHFORK_ANSWER_TO_THE_ULTIMATE_QUESTION}
+)
 
 if(PROJECT_IS_TOP_LEVEL)
   target_include_directories(

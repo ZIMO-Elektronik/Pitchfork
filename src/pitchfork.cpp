@@ -25,7 +25,8 @@ static_assert(false);
 ECRYPT_ctx ctx;
 
 int answer_to_the_ultimate_question_of_life_the_universe_and_everything() {
-  return deep_thought_available() ? 42 : 43;
+  return deep_thought_available() ? PITCHFORK_ANSWER_TO_THE_ULTIMATE_QUESTION
+                                  : 43;
 }
 
-}  // namespace pitchfork
+} // namespace pitchfork

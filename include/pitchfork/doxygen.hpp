@@ -18,4 +18,4 @@ namespace pitchfork {
 /// \page page_deep_dive Deep dive
 /// A page.
 
-}  // namespace pitchfork
+} // namespace pitchfork
