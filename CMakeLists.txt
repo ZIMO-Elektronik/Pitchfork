@@ -4,7 +4,7 @@ include(FetchContent)
 FetchContent_Declare(
   CMakeModules
   GIT_REPOSITORY "https://github.com/ZIMO-Elektronik/CMakeModules"
-  GIT_TAG v0.9.5
+  GIT_TAG v0.10.0
   SOURCE_DIR ${CMAKE_BINARY_DIR}/CMakeModules)
 FetchContent_MakeAvailable(CMakeModules)
 
@@ -37,6 +37,8 @@ if(PROJECT_IS_TOP_LEVEL)
     Pitchfork
     INTERFACE include
     PRIVATE external include/pitchfork)
+  target_common_warnings(Pitchfork PRIVATE)
+  target_common_errors(Pitchfork PRIVATE)
 else()
   target_include_directories(
     Pitchfork SYSTEM
@@ -44,10 +46,8 @@ else()
     PRIVATE external include/pitchfork)
 endif()
 
-target_common_warnings(Pitchfork PRIVATE)
-
 if(NOT TARGET Salsa20::Salsa20)
-  cpmaddpackage("gh:ZIMO-Elektronik/Salsa20@0.3.1")
+  cpmaddpackage("gh:ZIMO-Elektronik/Salsa20@0.3.2")
 endif()
 
 target_link_libraries(Pitchfork PRIVATE Salsa20::Salsa20)
@@ -60,7 +60,8 @@ if(PROJECT_IS_TOP_LEVEL)
     DOWNLOAD
     "https://github.com/ZIMO-Elektronik/.github/raw/master/data/.clang-format"
     ${CMAKE_CURRENT_LIST_DIR}/.clang-format)
-  file(GLOB_RECURSE SRC include/*.[ch]pp src/*.[ch]pp tests/*.[ch]pp)
+  file(GLOB_RECURSE SRC external/*.[ch]pp include/*.[ch]pp src/*.[ch]pp
+       tests/*.[ch]pp)
   add_clang_format_target(PitchforkFormat OPTIONS -i FILES ${SRC})
 endif()
 
