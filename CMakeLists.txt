@@ -4,7 +4,7 @@ include(FetchContent)
 FetchContent_Declare(
   CMakeModules
   GIT_REPOSITORY "https://github.com/ZIMO-Elektronik/CMakeModules"
-  GIT_TAG v0.10.0
+  GIT_TAG v0.12.2
   SOURCE_DIR ${CMAKE_BINARY_DIR}/CMakeModules)
 FetchContent_MakeAvailable(CMakeModules)
 
@@ -63,6 +63,7 @@ if(PROJECT_IS_TOP_LEVEL)
   file(GLOB_RECURSE SRC external/*.[ch]pp include/*.[ch]pp src/*.[ch]pp
        tests/*.[ch]pp)
   add_clang_format_target(PitchforkFormat OPTIONS -i FILES ${SRC})
+  add_include_what_you_must_target(PitchforkIncludeWhatYouMust TARGET Pitchfork)
 endif()
 
 if(BUILD_TESTING
